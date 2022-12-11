@@ -17,7 +17,7 @@ export class JokesService {
     getJokes(): Observable<Jokes> {
         if (this.jokes) return of(this.jokes)
 
-        return this.http.get<Jokes>('/assets/jokes-json.json').pipe(
+        return this.http.get<Jokes>('assets/jokes-json.json').pipe(
             switchMap((jokes: Jokes) => {
                 const url = `https://api.pexels.com/v1/search?query=fun&per_page=${jokes.length}&orientation=landscape&size=small`
                 const headers = {Authorization: '563492ad6f91700001000001d9ebb866bad6430986ec1e7571506616'}
