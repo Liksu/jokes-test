@@ -42,6 +42,7 @@
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
             "outputPath": "docs",
+            "baseHref": "/jokes-test",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": [
