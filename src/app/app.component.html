@@ -1,0 +1,7 @@
+<mat-toolbar>
+    <span>Jokes</span>
+    <span class="spacer"></span>
+    <button mat-button (click)="logout()" *ngIf="authService.user$ | async">Logout</button>
+</mat-toolbar>
+
+<router-outlet></router-outlet>

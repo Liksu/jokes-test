@@ -1,0 +1,7 @@
+<div class='container'>
+    <app-joke-card *ngFor="let joke of jokes"
+                   [joke]="joke"
+                   [slim]="slim"
+                   (onOpen)="onOpen.emit($event)"
+    ></app-joke-card>
+</div>
