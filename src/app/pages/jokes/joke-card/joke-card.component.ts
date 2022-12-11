@@ -11,19 +11,20 @@ import { MatDialog } from '@angular/material/dialog'
 export class JokeCardComponent {
     @Input() joke!: Joke
     @Input() slim: boolean = false
-    @Output() onOpen = new EventEmitter<Joke>()
 
     constructor(
         private dialog: MatDialog
     ) {}
 
     openJoke(joke: Joke) {
+        if (this.dialog.openDialogs.length) {
+            this.dialog.closeAll()
+        }
+
         let dialogRef = this.dialog.open(JokeDialogComponent, {
             height: '642px',
             width: '516px',
             data: joke
         })
-
-        this.onOpen.emit(joke)
     }
 }

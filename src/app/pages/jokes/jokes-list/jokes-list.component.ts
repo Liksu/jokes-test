@@ -9,5 +9,4 @@ import { Joke, Jokes } from '../../../interfaces'
 export class JokesListComponent {
     @Input() jokes: Jokes = []
     @Input() slim: boolean = false
-    @Output() onOpen = new EventEmitter<Joke>()
 }

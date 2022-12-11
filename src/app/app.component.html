@@ -4,4 +4,5 @@
     <button mat-button (click)="logout()" *ngIf="authService.user$ | async">Logout</button>
 </mat-toolbar>
 
-<router-outlet></router-outlet>
+<mat-spinner *ngIf="loading$ | async"></mat-spinner>
+<router-outlet *ngIf="!(loading$ | async)"></router-outlet>

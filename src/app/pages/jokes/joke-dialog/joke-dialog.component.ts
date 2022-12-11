@@ -12,14 +12,9 @@ export class JokeDialogComponent {
     suggestions!: Jokes
 
     constructor(
-        private dialogRef: MatDialogRef<JokeDialogComponent>,
         private jokeService: JokesService,
         @Inject(MAT_DIALOG_DATA) public joke: Joke,
     ) {
         this.suggestions = this.jokeService.getSuggestions(joke)
-    }
-
-    closeCurrentDialog() {
-        this.dialogRef.close()
     }
 }
